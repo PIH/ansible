@@ -1,6 +1,7 @@
 ---
 - hosts: "{{target}}"
   sudo: yes
+  
   vars_files:   
       - ../../../group_vars/local
       - ../../../group_vars/bahmni_installer
