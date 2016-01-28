@@ -1,0 +1,12 @@
+usernames: [mseaton; jmbabazi; eball; mgoodrich; cioan]
+user_default_password: usw.8WD1/10hI
+group_name: admin
+users_default_shell: /bin/bash
+wget_username: jmbabazi
+wget_password: 2f2b2bcaa2a9ff30d3e36d6bde65d492d5f5757f
+
+
+bahmni_endtb_repo_url: https://bahmni-repo.twhosted.com/endtb
+bahmni_deployment_artifacts: /etc/bahmni-installer/deployment-artifacts
+inventory_file_url: https://bahmni.atlassian.net/wiki/download/attachments/35291242/prod_sample_inventory?version=1&modificationDate=1449843726269&api=v2
+bahmni_installer_directory: /etc/bahmni-installer
