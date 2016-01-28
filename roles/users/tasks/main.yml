@@ -36,7 +36,6 @@
         - ball
         - cioan
         - jmbabazi
-        - bahmni_james
 
   - name: Expiring password for user {{ item }}
     shell: chage -d 0 {{ item }}
@@ -47,4 +46,3 @@
         - mgoodrich
         - cioan
         - jmbabazi
-
