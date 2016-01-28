@@ -12,6 +12,8 @@ git clone https://github.com/PIH/ansible
 
 cd ansible
 
+chmod 755 installer.sh
+
 ./installAnsible.sh
 
 ansible-playbook -e "target=localhost" test
