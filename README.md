@@ -10,3 +10,9 @@ git clone https://github.com/PIH/ansible
 cd ansible
 
 ansible-playbook -e "target=localhost" test
+
+
+Run playbook on a remote server
+-------------------------------
+
+ansible-playbook -u root --extra-vars="target=IP_Address" test -k
