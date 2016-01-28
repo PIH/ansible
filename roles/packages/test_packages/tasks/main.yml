@@ -1,0 +1,19 @@
+---
+- hosts: "{{ target }}"
+  sudo: yes
+
+  tasks:
+  - name: update yum
+    yum: name=* state=latest
+
+  - name: install required packages
+    yum: pkg={{ item }} state=installed
+    with_items:
+        - jq # for jason(jason query)
+        - vim
+        - unzip
+        - tar
+        - wget
+        - curl
+ 
+
