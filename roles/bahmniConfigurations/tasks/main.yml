@@ -19,11 +19,7 @@
   - name: Extract endtb_config
     # unarchive: src=/etc/bahmni-installer/deployment-artifacts/endtb-config.zip dest=/etc/bahmni-installer/deployment-artifacts (This works if you use the dubai url)
     unarchive: src={{ bahmni_deployment_artifacts }}/endtb_config.zip dest={{ bahmni_deployment_artifacts }}/endtb_config
-
-  - name: Copy openmrs folder from endtb-config-master to endtb_config
-    # copy: src=/etc/bahmni-installer/deployment-artifacts/endtb-config-master/openmrs dest=/etc/bahmni-installer/deployment-artifacts/endtb_config (This is for Dubai)
-    command: rsync -avh {{ bahmni_deployment_artifacts }}/openmrs {{ bahmni_deployment_artifacts }}/endtb_config
-
+    
   - name: copy the inventory file
     get_url: url={{ inventory_file_url }} dest={{ bahmni_installer_directory }}
 
