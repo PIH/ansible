@@ -1,7 +1,6 @@
 ---
-- include: /vagrant/ansible/roles/packages/tasks/main.yml
-#- include: /vagrant/ansible/roles/packages/test_packages/tasks/main.yml
-#- include: roles/bahmniInstaller/tasks/main.yml
-#- include: roles/bahmniConfigurations/tasks/main.yml
+- include: roles/packages/test_packages/tasks/main.yml
+- include: roles/bahmniInstaller/tasks/main.yml
+- include: roles/bahmniConfigurations/tasks/main.yml
  
 
