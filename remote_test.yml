@@ -1,4 +1,3 @@
-
 ---
 - include: roles/packages/test_packages/tasks/main.yml
 - include: roles/bahmniInstaller/tasks/main_remote.yml
