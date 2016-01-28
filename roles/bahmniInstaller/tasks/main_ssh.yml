@@ -1,0 +1,22 @@
+---
+- hosts: "{{target}}"
+  sudo: yes
+  
+  vars_files:   
+      - ../../../group_vars/local
+      - ../../../group_vars/bahmni_installer
+
+  tasks:
+  - name: Download latest version of the installer
+    get_url: url=https://api.bintray.com/packages/bahmni/rpm/bahmni-installer/versions/_latest dest=/tmp url_username={{ wget_username }} url_password={{ wget_password }}
+    
+  - name: get the latest installer version
+    shell: cat /tmp/_latest | jq '.name' > /tmp/installer_version
+    
+  - name: copy the content from above to group_var/local	
+    #lineinfile: dest=group_vars/bahmni_installer regexp="^bahmni_installer_version " insertafter="^#bahmni_installer_version " line= {{ lookup('file', '/tmp/installer_version') }}
+    shell: echo bahmni_installer':' {{ lookup('file', '/tmp/installer_version') }} > ../../../group_vars/bahmni_installer
+
+  - name: Install the installer
+#   get_url: url=https://bintray.com/artifact/download/bahmni/rpm/rpms/bahmni-installer-{{ bahmni_installer }}.noarch.rpm dest=/tmp
+    yum: name="https://bintray.com/artifact/download/bahmni/rpm/rpms/bahmni-installer-{{ bahmni_installer }}.noarch.rpm" state=present
