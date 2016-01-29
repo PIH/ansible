@@ -24,7 +24,7 @@ setup a remote server running this playbook on your local machine
 
 install the sshpass program
 
-add <ip-address> in /etc/ansible/hosts
+add ip-address in /etc/ansible/hosts
 
 cd /tmp
 
