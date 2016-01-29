@@ -4,7 +4,6 @@
   
   vars_files:   
       - ../../../group_vars/local
-      - ../../../group_vars/bahmni_installer
 
   tasks:
   - name: Download latest version of the installer
@@ -12,11 +11,8 @@
     
   - name: get the latest installer version
     shell: cat /tmp/_latest | jq '.name' > /tmp/installer_version
+    register: cat
     
-  - name: copy the content from above to group_var/local	
-    #lineinfile: dest=group_vars/bahmni_installer regexp="^bahmni_installer_version " insertafter="^#bahmni_installer_version " line= {{ lookup('file', '/tmp/installer_version') }}
-    shell: echo bahmni_installer':' {{ lookup('file', '/tmp/installer_version') }} > ../../../group_vars/bahmni_installer
-
   - name: Install the installer
 #   get_url: url=https://bintray.com/artifact/download/bahmni/rpm/rpms/bahmni-installer-{{ bahmni_installer }}.noarch.rpm dest=/tmp
-    yum: name="https://bintray.com/artifact/download/bahmni/rpm/rpms/bahmni-installer-{{ bahmni_installer }}.noarch.rpm" state=present
+    yum: name="https://bintray.com/artifact/download/bahmni/rpm/rpms/bahmni-installer-{{ cat }}.noarch.rpm" state=present
