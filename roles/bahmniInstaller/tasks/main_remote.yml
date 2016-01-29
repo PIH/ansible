@@ -15,4 +15,4 @@
     
   - name: Install the installer
 #   get_url: url=https://bintray.com/artifact/download/bahmni/rpm/rpms/bahmni-installer-{{ bahmni_installer }}.noarch.rpm dest=/tmp
-    yum: name="https://bintray.com/artifact/download/bahmni/rpm/rpms/bahmni-installer-{{ cat }}.noarch.rpm" state=present
+    yum: name="https://bintray.com/artifact/download/bahmni/rpm/rpms/bahmni-installer-{{ cat.stdout }}.noarch.rpm" state=present
