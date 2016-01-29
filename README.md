@@ -19,8 +19,10 @@ chmod 755 installer.sh
 ansible-playbook -e "target=localhost" test
 
 
-setup a remote server using this playbook
-------------------------------------------
+setup a remote server running this playbook on your local machine
+------------------------------------------------------------------
+
+add <ip-address> in /etc/ansible/hosts
 
 cd /tmp
 
