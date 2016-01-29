@@ -30,4 +30,4 @@ git clone https://github.com/PIH/ansible
 
 cd ansible
 
-ansible-playbook -u root --extra-vars="target=IP_Address" remote_test -k
+ansible-playbook -u root --extra-vars="target=IP_Address" remote_test.yml -k
