@@ -24,7 +24,7 @@ setup a remote server running this playbook on your local machine
 
 install the sshpass program
 
-add ip-address in /etc/ansible/hosts
+add remote_ip-address in /etc/ansible/hosts
 
 cd /tmp
 
@@ -32,4 +32,4 @@ git clone https://github.com/PIH/ansible
 
 cd ansible
 
-ansible-playbook -u root --extra-vars="target=IP_Address" remote_test.yml -k
+ansible-playbook -u root --extra-vars="target=remote_IP_Address" remote_test.yml -k
