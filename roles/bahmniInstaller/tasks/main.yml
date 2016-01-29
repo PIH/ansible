@@ -8,7 +8,7 @@
 
   tasks:
   - name: Download latest version of the installer
-    get_url: url=https://api.bintray.com/packages/bahmni/rpm/bahmni-installer/versions/_latest dest=/tmp url_username={{ wget_username }} url_password={{ wget_password }}
+    get_url: url=https://api.bintray.com/packages/bahmni/rpm/bahmni-installer/versions/_latest dest=/tmp url_username=jmbabazi url_password=
     
   - name: get the latest installer version
     shell: cat /tmp/_latest | jq '.name' > /tmp/installer_version
