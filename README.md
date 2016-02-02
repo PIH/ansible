@@ -3,6 +3,7 @@ ansible playbook to install bahmni(endTB) on a freshly installed centOS
 
 Vagrant
 -------
+To set up your vagrant box, download the Vagrantfile and in the same directory as the Vagrantfile do:
 
 vagrant up
 
