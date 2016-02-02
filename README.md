@@ -1,6 +1,11 @@
 # ansible_endTB
 ansible playbook to install bahmni(endTB) on a freshly installed centOS
 
+Vagrant
+-------
+
+vagrant up
+
 Run playbook on a local server
 --------------------------------
 
